@@ -1,3 +1,5 @@
+
+
 .card {
     padding: 1rem;
 
@@ -49,6 +51,28 @@
         color: #334155;
     }
 }
+/*styler øverste h3*/
+.card:has(h3):not(:has(img)){
+    h3 {
+        font-size: 1.6rem;
+    }
+}
+
+/*Styler paragraf*/
+.card:has(p):not(:has(img)):not(:has(h3)){
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+/*styler billederne "full-bleed ud til kanten*/
+
+.card:has(img){
+    img {
+        width: calc(100% + 2rem);
+        margin-left: -1rem;
+        margin-top: -1rem;
+    }
+}
 
 @layer reset {
     * {
@@ -71,6 +95,12 @@
     body {
         display: grid;
         place-content: center;
-        block-size: 100svh;
+        min-block-size: 100svh;
     }
 }
+
+/*SPØRGSMÅL*/
+
+/* -- Hvorfor kunne jeg ikke se det hele med 100svh, måtte sætte min-block-size på i stedet ????*/
+
+/*
