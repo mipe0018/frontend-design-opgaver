@@ -1,9 +1,44 @@
 body {
   display: grid;
   /* Tilføj navngivne linjer */
-  grid-template-columns: 1fr minmax(0, 70ch) 1fr;
+  grid-template-columns: [a] 1fr [b] minmax(0, 70ch) [c] 1fr [d];
 }
 
 .breakout {
   background: #a8fad5;
 }
+
+/* Header */
+header {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: a / d;
+}
+
+header > * {
+    grid-column: b;
+}
+
+main {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: b;
+    height: fit-content;
+}
+
+
+
+footer {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: a / d;
+}
+
+footer > * {
+    grid-column: b;
+}
+/*Spørgsmål*/
+
+/*er der en måde at se de navngivet grids i dev-tool?*/
+
+/*kan ikke finde ud af området med breakout.?*/
